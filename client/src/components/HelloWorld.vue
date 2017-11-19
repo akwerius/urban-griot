@@ -1,23 +1,5 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+
 </template>
 
 <script>
@@ -25,12 +7,52 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Urban Griots!'
     }
   }
 }
 </script>
+<script>
+var Hmm = require('../../hmm-master/lib/hmm.js')
+var letterModel = new Hmm()
 
+var TONE = 1
+var SLAP = 2
+var BASS = 3
+
+var A = [TONE, SLAP, BASS, BASS]
+var B = [SLAP, TONE, TONE, TONE]
+var C = [SLAP, TONE, SLAP, TONE]
+var D = [SLAP, TONE, TONE, BASS]
+var E = [TONE, BASS, BASS, BASS]
+var F = [TONE, TONE, SLAP, TONE]
+var G = [SLAP, SLAP, TONE, BASS]
+var H = [TONE, TONE, TONE, TONE]
+var I = [TONE, TONE, BASS, BASS]
+var J = [TONE, SLAP, SLAP, SLAP]
+var K = [SLAP, TONE, SLAP, BASS]
+var L = [TONE, SLAP, TONE, TONE]
+var M = [SLAP, SLAP, BASS, BASS]
+var N = [SLAP, TONE, BASS, BASS]
+var O = [SLAP, SLAP, SLAP, BASS]
+var P = [TONE, SLAP, TONE, SLAP]
+var Q = [SLAP, SLAP, TONE, SLAP]
+var R = [TONE, SLAP, TONE, BASS]
+var S = [TONE, TONE, TONE, BASS]
+var T = [SLAP, BASS, BASS, BASS]
+var U = [TONE, TONE, SLAP, BASS]
+var V = [TONE, TONE, TONE, SLAP]
+var W = [TONE, SLAP, SLAP, BASS]
+var X = [SLAP, TONE, TONE, SLAP]
+var Y = [SLAP, TONE, SLAP, SLAP]
+var Z = [SLAP, SLAP, TONE, TONE]
+var something = [TONE, BASS, BASS, BASS]
+
+letterModel.initialize([A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z], 4)
+letterModel.print()
+var result = (letterModel.generationProbability(something) * 100)
+console.log(result + '%')
+</script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {

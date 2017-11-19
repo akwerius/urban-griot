@@ -1,0 +1,34 @@
+{
+	"dependencies": {},
+	"devDependencies": {
+		"chai": "~3.5.0",
+		"codo": "~2.1.0",
+		"coffee-coverage": "^1.0.1",
+		"coffee-script": "~1.10.0",
+		"mocha": "~2.5.3",
+		"istanbul": "~0.4.3"
+	},
+	"name": "HiddenMarkovModel",
+	"description": "Simple Hidden Markov Model implementation",
+	"keywords": [
+		"hidden",
+		"markov",
+		"model",
+		"machile",
+		"learning"
+	],
+	"version": "0.0.3",
+	"author": "Lluís Ulzurrun de Asanza Sàez <me@llu.is> (http://llu.is)",
+	"license": "MIT",
+	"repository": "Sumolari/hmm",
+	"files": [
+		"index.js"
+	],
+	"scripts": {
+		"prepublish": "./node_modules/coffee-script/bin/coffee -c -o lib src",
+		"test": "./node_modules/mocha/bin/mocha --recursive --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul test",
+		"test-cov": "npm test && ./node_modules/.bin/istanbul report",
+		"test-travis": "./node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --compilers coffee:coffee-script/register --require coffee-coverage/register-istanbul",
+		"doc": "node_modules/codo/bin/codo src/hmm.coffee"
+	}
+}
